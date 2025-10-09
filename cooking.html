@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Cooking & Cleaning Simulation</title>
+    </head>
+    <body><center>
+        <h1 align="center">Kitchen Tasks</h1>
+        <button onclick="startTask()" style="border-radius: 5px;box-shadow: 10px;">START COOKING & CLEANING</button>
+        <div id="output" style="margin-top: 20px; font-family: monospace; border: 1px solid #ccc; padding: 10px; min-height: 50px;">
+        </div>
+
+        <script>
+            function logMessage(message) {
+                const outputDiv = document.getElementById('output');
+                const p = document.createElement('p');
+                p.textContent = message;
+                outputDiv.appendChild(p);
+            }
+
+            function cook() {
+                logMessage("Cooking started...");
+                setTimeout(() => {
+                    logMessage("Cooking finished!");
+                }, 3000);
+            }
+
+            function cleanKitchen() {
+                logMessage("Kitchen cleaning started...");
+                logMessage("Kitchen cleaning finished!");
+            }
+
+            function startTask() {
+                document.getElementById('output').innerHTML = "";         
+                cook();
+                cleanKitchen();
+            }
+        </script>
+        </center>
+    </body>
+</html>
